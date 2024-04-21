@@ -3,6 +3,8 @@ package com.amikelmaxi.apiordenservico.domains;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -15,6 +17,7 @@ import lombok.Setter;
 @Setter
 public class Tecnico extends Pessoa {
 
+    @JsonIgnore
     @OneToMany(mappedBy = "tecnico")    
     private List<Atendimento> atendimentos = new ArrayList<>();
 
